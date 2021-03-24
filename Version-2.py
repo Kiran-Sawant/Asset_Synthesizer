@@ -102,7 +102,7 @@ def synthesize(symbol1, symbol2, period):
         else:
             basequote = base_asset[['open', 'high', 'low', 'close']] * quote_asset[['open', 'high', 'low', 'close']]
     
-    else:
+    else:                                                    # Base Asset is not quoted in dollar.
         dollarisedAsset = dollarizer(symbol1, dollarPair(baseAsset_quote), period)
 
         if symbol2[3:6] == 'USD':
