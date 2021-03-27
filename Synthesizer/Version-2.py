@@ -29,14 +29,16 @@ denomination_dict ={'None': None, 'EUR': 'EURUSD', 'GBP': 'GBPUSD', 'AUD': 'AUDU
                     'ZAR': 'USDZAR'}
 
 
-def dollarPair(currency: str):
+def dollarPair(currency: str) -> str:
+    """Returns the Dollar converting pair for a currency, like AUDUSD for AUD, etc."""
+
     if currency in ['EUR', 'GBP', 'AUD', 'NZD']:
         return currency + 'USD'
     else:
         return 'USD' + currency
 
 
-def dollarizer(asset, dollarpair, period):
+def dollarizer(asset: str, dollarpair: str, period: int) -> pd.DataFrame:
 
     mt5.symbol_select(dollarpair)
     time.sleep(2)
@@ -98,7 +100,7 @@ def synthesize(symbol1, symbol2, period):
     elif symbol1[3:6] == 'USD' or baseAsset_quote == 'USD':  # Dollar quoted ie. EURUSD, SnP500...
         if symbol2[3:6] == 'USD':
             basequote = base_asset[['open', 'high', 'low', 'close']] / quote_asset[['open', 'high', 'low', 'close']]
-            # basequote.rename(columns={'high':'low', 'low':'high'}, inplace=True)
+            basequote.rename(columns={'high':'low', 'low':'high'}, inplace=True)
         else:
             basequote = base_asset[['open', 'high', 'low', 'close']] * quote_asset[['open', 'high', 'low', 'close']]
     
@@ -125,7 +127,7 @@ def plotter():
         synthetic_asset = pd.DataFrame(mt5.copy_rates_from_pos(asset, mt5.TIMEFRAME_H1, 1, periods)).drop(columns=['spread', 'real_volume'])
         synthetic_asset['time'] = pd.to_datetime(synthetic_asset['time'], unit='s')
         synthetic_asset.set_index(keys=['time'], inplace=True)
-    else:
+    else:                       # Cross-currency is selected
         synthetic_asset = synthesize(asset, currency, periods)
     
     synthetic_asset.dropna(inplace=True)
