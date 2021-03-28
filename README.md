@@ -40,7 +40,7 @@ just make sure not to insert periods more than the candles themselves(duh!).
 Here is an example of SENSEX quoted in USD.
 <img src='snippets/Sensex-USD.PNG'>
 <br>
-Bitcoin in USD.
+Bitcoin in INR.
 <img src='snippets/BTCINR.png'>
 
 Note:
