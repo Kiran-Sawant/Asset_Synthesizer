@@ -45,4 +45,4 @@ Bitcoin in INR.
 
 Note:
   - This app is still in beta, do not use it for reading candlestick patterns, the candles can be slightly inaccurate at times, but the overall trend is not.
-  - After pressing Synthesize the app might take some time to make network calls depending on the cross and time-span you've selected, be a little patient.
+  - After pressing Synthesize, the app might take some time to make network calls, depending on the cross, internet speed and time-span you've selected, be a little patient.
