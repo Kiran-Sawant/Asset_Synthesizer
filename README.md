@@ -39,8 +39,10 @@ just make sure not to insert periods more than the candles themselves(duh!).
 
 Here is an example of SENSEX quoted in USD.
 <img src='snippets/Sensex-USD.PNG'>
+<br>
+Bitcoin in USD.
+<img src='snippets/BTCINR.png'>
 
 Note:
   - This app is still in beta, do not use it for reading candlestick patterns, the candles can be slightly inaccurate at times, but the overall trend is not.
   - After pressing Synthesize the app might take some time to make network calls depending on the cross and time-span you've selected, be a little patient.
-  - The app crosses the US dollar to determine prices, do not insert USD based assets(USDJPY, USDINR, etc) in entry box.
