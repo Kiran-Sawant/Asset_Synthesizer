@@ -15,7 +15,7 @@ denomination_dict = {'USD':'USD', 'EUR': 'EURUSD=X','GBP': 'GBPUSD=X', 'AUD': 'A
 
 #_____________Tk functions______________#
 def errorBox():
-
+    """Error dialog for empty symbol-box"""
     top = tk.Toplevel(mainWindow)
     top.title('ERROR')
     top.geometry('170x80')
@@ -23,8 +23,8 @@ def errorBox():
     btn = ttk.Button(top, text='ok', command=lambda: top.destroy()).pack(pady=5)
 
 def errorBox2():
-
-    top = tk.Toplevel(mainWindow)
+    """Error dialog for wrong symbol input"""
+    top = tk.Toplevel(mainWindow)   
     top.title('ERROR')
     top.geometry('170x80')
     label = ttk.Label(top, text='Invalid Symbol!').pack(pady=10)
@@ -94,6 +94,7 @@ def synthesize(base, quote, start, end, interval):
 
 
 def plotter():
+    """Takes the input value from widgets and creates a candlestick plot."""
 
     base = (symbolVar.get()).upper()
     quote = quoteCurrency.get()
