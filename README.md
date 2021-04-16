@@ -40,8 +40,8 @@ just make sure not to insert periods more than the candles themselves(duh!).
 Here is an example of SENSEX quoted in USD.
 <img src='snippets/Sensex-USD.PNG'>
 <br>
-Bitcoin in INR.
-<img src='snippets/BTCINR.png'>
+Nifty50 against Gold.
+<img src='snippets/niftygold.PNG'>
 
 Note:
   - This app is still in beta, do not use it for reading candlestick patterns, the candles can be slightly inaccurate at times, but the overall trend is not.
