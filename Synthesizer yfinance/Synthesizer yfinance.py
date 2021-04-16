@@ -11,7 +11,8 @@ pd.set_option('precision', 3)
 denomination_dict = {'USD':'USD', 'EUR': 'EURUSD=X','GBP': 'GBPUSD=X', 'AUD': 'AUDUSD=X', 'NZD':'NZDUSD=X',
                         'JPY': 'JPY=X', 'INR':'INR=X', 'SGD':'SGD=X', 'ZAR':'ZAR=X', 'RUB':'RUB=X',
                         'NOK':'USDNOK=X', 'SEK':'SEK=X', 'CHF':'CHF=X', 'TRY':'TRY=X', 'AED':'AED=X',
-                        'CNH':'CNH=X', 'BRL':'BRL=X', 'CAD':'CAD=X', 'BTC':'BTC-USD', 'ETH':'ETH-USD',}
+                        'CNH':'CNH=X', 'BRL':'BRL=X', 'CAD':'CAD=X', 'XAU':'GC=F', 'XAG':'SI=F',
+                        'XPT':'PL=F', 'BTC':'BTC-USD', 'ETH':'ETH-USD',}
 
 #_____________Tk functions______________#
 def errorBox():
@@ -33,7 +34,7 @@ def errorBox2():
 #____________Core Functions________________#
 def dollarPair(currency: str) -> str:
 
-    if currency in ['EUR', 'GBP', 'AUD', 'NZD', 'BTC', 'ETH']:
+    if currency in ['EUR', 'GBP', 'AUD', 'NZD', 'BTC', 'ETH', 'XAU', 'XAG', 'XPT']:
         return currency + 'USD'
     else:
         return 'USD' + currency
